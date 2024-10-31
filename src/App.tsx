@@ -2,6 +2,7 @@ import { createSignal, For, type Component } from "solid-js";
 import { createVirtualizer } from "@tanstack/solid-virtual";
 
 const App: Component = () => {
+  // Initial size estimate of 28
   const [rowEstimate, setRowEstimate] = createSignal(28);
 
   let scrollEl!: HTMLDivElement;
@@ -10,9 +11,6 @@ const App: Component = () => {
     count: 5,
     getScrollElement: () => scrollEl,
     estimateSize: () => rowEstimate(),
-
-    // This also doesn't work, gives a different but still wrong scroll window:
-    // estimateSize: () => 198
   });
   const items = virtualizer.getVirtualItems();
 
