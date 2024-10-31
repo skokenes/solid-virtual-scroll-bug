@@ -7,7 +7,7 @@ const App: Component = () => {
   let scrollEl!: HTMLDivElement;
 
   const virtualizer = createVirtualizer({
-    count: 10,
+    count: 5,
     getScrollElement: () => scrollEl,
     estimateSize: () => rowEstimate(),
 
@@ -20,11 +20,11 @@ const App: Component = () => {
     <div
       ref={scrollEl}
       style={{
-        // At 1000px, the scroll window calculates properly
-        // "max-height": "1000px",
+        // At 500px, the scroll window calculates properly
+        // "max-height": "500px",
 
-        // At 2000px, the scrolling does not show properly
-        "max-height": "2000px",
+        // At 1000px, the scrolling does not show properly
+        "max-height": "1000px",
         overflow: "auto",
         width: "100px",
         border: "1px solid black",
